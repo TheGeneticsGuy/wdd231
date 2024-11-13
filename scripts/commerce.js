@@ -180,6 +180,6 @@ function EstablishMenuWaypoint(id_name) {
     }
 }
 
-// Initial load
+// Initial loading
 render_courses(courses);
 EstablishMenuWaypoint("home");

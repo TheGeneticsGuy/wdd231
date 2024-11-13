@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Topping Portfolio - Site Plan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <meta name="description" content="WDD 231 - Course Home Page - Site Plan.">
+    <meta name="author" content="Aaron Topping">
+
+    <!-- STYLE SHEETS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/commerce.css">
+    <link rel="stylesheet" href="styles/commerce-large.css">
+
+    <!-- JS LOGIC -->
+    <script src="scripts/commerce.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header-Top">
+            <img src="images/Aaron.webp" alt="Aaron Topping" width="200" height="143">
+            <p>Aaron Topping</p>
+        </div>
+        <div class="icon-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html" target="_blank" id="home">Home</a></li>
+                <li><a href="#" id="chamber">Chamber</a></li>
+                <li><a href="https://github.com/TheGeneticsGuy" target="_blank" id="git">Github Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/aaron-topping-3b0580104/" target="_blank"
+                        id="linkedin">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="top_sections">
+            <section>
+                <h2>Course Work</h2>
+                <div id="course_work">
+                    <p>•</p>
+                    <p>•</p>
+                    <p>•</p>
+                </div>
+            </section>
+            <section>
+                <h2>Tucson, AZ</h2>
+                <div id="location">
+                    <img src="images/tucson.webp" alt="Sonoran Desert" loading="lazy" width="150" height="187">
+                    <p>Sonoran Desert</p>
+                </div>
+            </section>
+        </div>
+        <section class="bottom_section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter_buttons">
+                <button type="submit" id="all">All Courses</button>
+                <button type="submit" id="cse">CSE Courses</button>
+                <button type="submit" id="wdd">WDD Courses</button>
+            </div>
+
+            <div id="course-grid">
+
+            </div>
+            <div class="section3_p">
+                <p>Total Credits Earned:&emsp;<span id="credits"></spam>
+                </p>
+                <p>Total Credits Required:&emsp;<span id="credits_total"></spam>
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="owner-info">
+            <p>©️<span id="currentyear"></span> </p>
+            <p>| Aaron Topping | </p>
+            <p>Arizona</p>
+        </div>
+        <p class="modified">Last Update: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>

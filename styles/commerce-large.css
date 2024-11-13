@@ -1,0 +1,47 @@
+@media screen and (min-width: 600px) {
+
+    #course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .owner-info {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (min-width: 800px) {
+
+    body {
+        width: 100%;
+    }
+
+    .icon-menu {
+        display: none;
+    }
+
+    .navigation {
+        justify-content: flex-end;
+        flex-direction: row;
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    .navigation a {
+        font-size: 1.5rem;
+    }
+
+    .top_sections {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    #course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}

@@ -33,7 +33,7 @@ function render_courses(filtered_classes) {
         course_button.textContent = `${course.subject} ${course.number}`;
 
         // Adding some logic on coloring of the button
-        course_button.style.backgroundColor = course.completed ? "#6e3c3b" : "grey";
+        course_button.style.backgroundColor = course.completed ? "#6e3c3b" : "black";
 
         // Adding a class to style the button
         course_button.classList.add("course-button");
@@ -172,10 +172,12 @@ function EstablishMenuWaypoint(id_name) {
             });
         }
 
-        if (buttons[i] != id_name) {
-            document.getElementById(buttons[i]).style.color = "#fff";
-        } else if (id_name == "home" || id_name == "chamber") {
-            document.getElementById(id_name).style.color = "#ea0000"
+        if (buttons[i] !== id_name) {
+            // Set non-selected buttons to black
+            document.getElementById(buttons[i]).style.backgroundColor = "";
+        } else if (id_name === "home" || id_name === "chamber") {
+            // Set selected "home" or "chamber" buttons to grey
+            document.getElementById(id_name).style.backgroundColor = "#444";
         }
     }
 }

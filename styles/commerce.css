@@ -196,7 +196,7 @@ main {
 
 #credits,
 #credits_total {
-    color: #008dc5
+    color: #031195
 }
 
 #course_work {
@@ -277,11 +277,6 @@ h2 {
     margin: 5px;
 }
 
-/*
-#course-grid button:hover {
-    background-color: #a05252;
-} */
-
 /* FOOTER */
 
 footer {
@@ -307,5 +302,5 @@ footer p {
 }
 
 .modified {
-    color: rgb(45, 218, 160);
+    color: #FDFF90;
 }

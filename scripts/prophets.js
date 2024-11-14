@@ -96,7 +96,7 @@ const died_21st = document.querySelector("#twentyfirst");
 const in_utah = document.querySelector("#utah");
 const outside_us = document.querySelector("#outsideUS");
 const server_15 = document.querySelector("#fifteenyears");
-const older_75 = document.querySelector("#old");
+const older_90 = document.querySelector("#old");
 
 all_prophets.addEventListener("click", () => {
     current_filter = 1;
@@ -133,7 +133,7 @@ server_15.addEventListener("click", () => {
     getProphetData(newest, current_filter);
 });
 
-older_75.addEventListener("click", () => {
+older_90.addEventListener("click", () => {
     current_filter = 8;
     getProphetData(newest, current_filter);
 });
@@ -157,7 +157,7 @@ function filterProphets(prophets, filter) {
     else if (filter === 7) {      // Served 15+ years
         return prophets.filter(prophet => prophet.length >= 15);
     }
-    else if (filter === 8) {      // Lived to be 75+ years old
+    else if (filter === 8) {      // Lived to be 90+ years old
         return prophets.filter(prophet => getDifferenceInYears(parseDate(prophet.birthdate), prophet.death) >= 90);
     }
     return prophets;

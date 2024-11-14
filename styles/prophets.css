@@ -14,7 +14,7 @@
 body {
     margin: 0 auto;
     padding: 0 1rem;
-    max-width: 1600px;
+    max-width: 1500px;
 }
 
 header {
@@ -39,6 +39,7 @@ header h1 {
     gap: 15px;
     font-family: Arial, sans-serif;
     padding: 10px;
+    font-size: 20px;
 }
 
 /* Style each label to add spacing and alignment */
@@ -46,7 +47,6 @@ header h1 {
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 16px;
 }
 
 /* Style the radio buttons for consistent size */
@@ -66,6 +66,34 @@ header h1 {
 /* Optional: Adding hover effect */
 .radio-label:hover {
     color: #0073e6;
+}
+
+/* Filter Buttons */
+
+.filter_buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
+    grid-gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+/* Let's add a little animation effect */
+.filter_buttons button:hover {
+    transform: scale(1.1);
+}
+
+.filter_buttons button {
+    background-color: var(--background-color);
+    color: #FFF;
+    font: var(--paragraph-font);
+    font-size: 1.5rem;
+    height: 50px;
+    min-width: 300px;
+    max-width: 325px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
 #cards {

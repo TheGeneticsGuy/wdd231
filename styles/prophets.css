@@ -1,3 +1,10 @@
+:root {
+    --background-color: #2d5a72;
+
+    --heading-font: 'Playfair Display', serif;
+    --paragraph-font: 'PT Serif', serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +14,58 @@
 body {
     margin: 0 auto;
     padding: 0 1rem;
-    max-width: 1350px;
+    max-width: 100%;
+}
+
+header {
+    background-color: var(--background-color)
 }
 
 header h1 {
-    font-size: 4rem;
+    font-family: var(--heading-font);
+    font-size: 3rem;
     text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+
+/* SORTING */
+
+/* Center the container within its parent */
+.radio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+/* Style each label to add spacing and alignment */
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Style the radio buttons for consistent size */
+.radio-label input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+    /* Slightly larger for accessibility */
+    cursor: pointer;
+}
+
+/* Style the label text */
+.radio-container label {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Optional: Adding hover effect */
+.radio-label:hover {
+    color: #0073e6;
 }
 
 #cards {
@@ -24,13 +77,13 @@ header h1 {
 }
 
 section {
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
     padding: 1rem;
     padding-top: 0;
     box-shadow: 3px 5px 10px 3px rgba(0, 0, 0, 0.5);
     margin: 1.5rem;
     transition: 0.25s ease-in-out;
-    max-width: 300px;
+    max-width: 325px;
     border-radius: 10px;
 
     /* Formatting */
@@ -47,16 +100,18 @@ img {
 }
 
 section h2 {
+    font-family: var(--heading-font);
     font-size: 2rem;
+    margin: 2px;
     font-weight: bold;
-    margin: 5px;
+    margin-bottom: 15px;
     text-align: center;
-    color: #2cb2ff
+    color: #8b0000
 }
 
 section p {
-    padding: 0.25rem;
-    margin: 2px;
+    font-family: var(--paragraph-font);
+    padding: 0.1rem;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -68,4 +123,15 @@ section img {
 
 section:hover {
     transform: scale(1.08);
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--background-color);
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin: 10px;
 }

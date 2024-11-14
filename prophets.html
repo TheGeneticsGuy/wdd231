@@ -8,6 +8,17 @@
     <meta name="description" content="Fetch API - WDD 231 Excercise">
     <meta name="author" content="Aaron Topping">
 
+    <!-- Google Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Font links -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
     <!-- STYLE SHEETS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/prophets.css">
@@ -29,6 +40,19 @@
         <h1>Latter-day Prophets</h1>
     </header>
     <main>
+
+        <div class="radio-container">
+            <label>Sort By:</label>
+            <label class="radio-label">
+                <input type="radio" name="sortOrder" value="earliest" id="earliest" checked>
+                Earliest
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="sortOrder" value="recent" id="recent">
+                Most Recent
+            </label>
+        </div>
+
         <div id="cards"></div>
     </main>
     <footer>

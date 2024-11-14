@@ -41,7 +41,7 @@ const displayProphets = (prophets) => {
             death.textContent = `Died: ${prophet.death.split(' ')[2]}`;
         } else {
             death.textContent = 'Living Prophet';
-            death.style.color = 'red';
+            death.style.color = '#680055';
         }
 
         portrait.setAttribute('src', prophet.imageurl);

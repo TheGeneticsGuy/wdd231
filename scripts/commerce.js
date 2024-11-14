@@ -174,8 +174,8 @@ function EstablishMenuWaypoint(id_name) {
 
         if (buttons[i] != id_name) {
             document.getElementById(buttons[i]).style.color = "#fff";
-        } else {
-            document.getElementById("home").style.color = "#ea0000"
+        } else if (id_name == "home" || id_name == "chamber") {
+            document.getElementById(id_name).style.color = "#ea0000"
         }
     }
 }

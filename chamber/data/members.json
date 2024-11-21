@@ -1,0 +1,76 @@
+{
+    "members": [
+        {
+            "name": "ChatGPT by OpenAI",
+            "address": "3180 18th St, San Francisco, California, 94110, USA",
+            "phone": "(123) 123-4567",
+            "website": "https://chatgpt.com/",
+            "image": "images/ChatGPT-logo.webp",
+            "member-lvl": 1,
+            "other": "Free limited use"
+        },
+        {
+            "name": "Anthropic Claude AI",
+            "address": "548 Market St, San Francisco, California, 94104, USA",
+            "phone": "(123) 123-4567",
+            "website": "https://claude.ai/",
+            "image": "images/claude-ai.webp",
+            "member-lvl": 1,
+            "other": "Free limited use"
+        },
+        {
+            "name": "Grok by X",
+            "address": "1355 Market St, San Francisco, California, 94103, USA",
+            "phone": "(123) 123-4567",
+            "website": "https://x.com/grok",
+            "image": "images/grok-logo.webp",
+            "member-lvl": 1,
+            "other": "Free on X only"
+        },
+        {
+            "name": "Google DeepMind",
+            "address": "1 St Giles High St, London, WC2H 8AG, United Kingdom",
+            "phone": "(123) 123-4567",
+            "website": "https://deepmind.com/",
+            "image": "images/google-deepmind.webp",
+            "member-lvl": 1,
+            "other": "Beta testing"
+        },
+        {
+            "name": "LLaMA - Meta AI",
+            "address": "1 Hacker Way, Menlo Park, California, 94025, USA",
+            "phone": "(123) 123-4567",
+            "website": "https://ai.meta.com/",
+            "image": "images/meta-ai.webp",
+            "member-lvl": 1,
+            "other": "Free limited use"
+        },
+        {
+            "name": "GitHub Copilot",
+            "address": "88 Colin P Kelly Jr St, San Francisco, California, 94107, USA",
+            "phone": "(123) 123-4567",
+            "website": "https://github.com/features/copilot",
+            "image": "images/github-copilot.webp",
+            "member-lvl": 1,
+            "other": "Subscription Required"
+        },
+        {
+            "name": "Stability AI",
+            "address": "29 Great Peter St, London, SW1P 3LW, United Kingdom",
+            "phone": "(123) 123-4567",
+            "website": "https://stability.ai/",
+            "image": "images/stability-ai.webp",
+            "member-lvl": 1,
+            "other": "Professional Licensing Required"
+        },
+        {
+            "name": "MidJourney",
+            "address": "20 12th St, San Francisco, California, 94103, USA",
+            "phone": "(123) 123-4567",
+            "website": "https://www.midjourney.com/",
+            "image": "images/midjourney.webp",
+            "member-lvl": 1,
+            "other": "Subscription Required"
+        }
+    ]
+}

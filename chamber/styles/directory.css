@@ -1,0 +1,156 @@
+:root {
+    --background-color: #fff6dd;
+    /* --background-body-color: #f5f5f5; */
+    --main-color: #ffdda9;
+
+    --heading-font: 'Playfair Display', serif;
+    --paragraph-font: 'PT Serif', serif;
+
+    --header-font-color: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--paragraph-font);
+    margin: 0 auto;
+    max-width: 100%;
+
+}
+
+header {
+    background-color: var(--main-color);
+    display: grid;
+    justify-content: center;
+    background: linear-gradient(to left,
+            var(--main-color) 82%,
+            #C1C2BF 18%);
+    /* Color Matched to the Logo using color picker hex match */
+}
+
+#header-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: stretch;
+    min-height: 150px;
+    max-width: 1600px;
+}
+
+header p {
+    color: var(--header-font-color);
+}
+
+#header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#header-left p {
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end;
+    /* Ensures at bottom right */
+    height: 100%;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    align-self: flex-end;
+    /* width: 100%; */
+}
+
+.navigation li {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    /* display: none */
+}
+
+.navigation.open li {
+    display: block;
+}
+
+.navigation li a {
+    display: block;
+    padding: 1rem;
+    color: var(--header-font-color);
+
+    /* White string */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.navigation a {
+    font-size: 1.25rem;
+}
+
+
+.navigation li a:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* BODY */
+
+main {
+    height: 500px;
+}
+
+#placeholder {
+    text-align: center;
+    padding: 2rem;
+}
+
+footer {
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1600px;
+    width: 100%;
+}
+
+#footer-left {
+    justify-self: center;
+    text-align: left;
+}
+
+#footer-right {
+    justify-self: center;
+    text-align: left;
+}
+
+
+#social_media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer img {
+    width: 75px;
+    height: auto;
+    padding: 10px;
+}

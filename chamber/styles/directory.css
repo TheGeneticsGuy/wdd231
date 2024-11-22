@@ -40,9 +40,14 @@ body {
     max-width: 1600px;
 }
 
-header h2 {
+header h1 {
     color: var(--header-font-color);
     padding: 20px;
+}
+
+#header_title {
+    font-size: 20px;
+    font-weight: 550;
 }
 
 #header-left {
@@ -306,6 +311,11 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.name-styling {
+    font-weight: bold;
+    font-size: large;
 }
 
 #footer-container {

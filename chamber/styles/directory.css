@@ -40,8 +40,9 @@ body {
     max-width: 1600px;
 }
 
-header p {
+header h2 {
     color: var(--header-font-color);
+    padding: 20px;
 }
 
 #header-left {
@@ -54,9 +55,6 @@ header img {
     margin: 0;
 }
 
-#header-left p {
-    padding: 20px;
-}
 
 nav {
     width: 100%;

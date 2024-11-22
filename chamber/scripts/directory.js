@@ -2,74 +2,166 @@
 document.getElementById("currentyear").innerHTML = new Date().getFullYear();
 document.getElementById("lastModified").innerHTML = document.lastModified;
 
+
+// HAMBURGER BUTTON LOGIC
+const icons = document.querySelectorAll('.icon-menu');
+const nav = document.querySelector(".navigation");
+
+icons.forEach(hamburger => {
+    hamburger.addEventListener('click', (event) => {
+        nav.classList.toggle("open");
+        hamburger.classList.toggle("open");
+    });
+});
+
+
+// GRID BUILDING
 const file_name = 'data/members.json'
 const cards = document.querySelector('#members-grid');
-let current_filter = 1;
+let current_filter = localStorage.getItem('sort_type') || '1';
 
-async function getProphetData(newest_first, filter) {
+async function getMemberData(filter) {
     const response = await fetch(file_name);
     const data = await response.json();
-    let memebrs = data.memebrs
+    let members = data.members
 
-    if (filter === 1) {
-        displayBusinessCards(prophets);
-    } else if (filter === 2) {
+    if (filter === '1') {
+        displayBusinessCards(members);
+    } else if (filter === '2') {
         displayBusinessTable(members);
     }
 
 }
 
 // Build the grid
-const displayProphets = (prophets) => {
+const displayBusinessCards = (members) => {
 
-    resetProphetsGrid()
-    prophets.forEach((prophet) => {
+    resetMemberGrid();
+    members.forEach((member) => {
 
+        // BUILD THE CARDS
         let card = document.createElement('section');
-        let fullName = document.createElement('h2');
-        let dob = document.createElement('p');
-        let place = document.createElement('p');
-        let death = document.createElement('p');
-        let portrait = document.createElement('img');
 
-        fullName.textContent = `${prophet.name} ${prophet.lastname}`;
-        dob.textContent = `Date of Birth: ${prophet.birthdate}`;
-        place.textContent = `Place of Birth: ${prophet.birthplace}`;
-        if (prophet.death) {
-            death.textContent = `Died: ${prophet.death.split(' ')[2]}`;
-        } else {
-            death.textContent = 'Living Prophet';
-            death.style.color = '#680055';
-        }
+        // Separate into 2 sections, top and bottom
+        let top = document.createElement('div');
+        let bottom = document.createElement('div');
+        top.setAttribute('id', 'card-top');
+        bottom.setAttribute('id', 'card-bottom');
 
-        portrait.setAttribute('src', prophet.imageurl);
-        portrait.setAttribute('alt', `Portrait of ${prophet.name} ${prophet.lastname}`)
-        portrait.setAttribute('loading', 'lazy');
-        portrait.setAttribute('width', '270');
-        portrait.setAttribute('height', '350');
+        // All the filler elements
+        let logo = document.createElement('img');
+        let address = document.createElement('p');
+        let phone = document.createElement('p');
+        let url = document.createElement('a');
 
-        card.appendChild(fullName);
-        card.appendChild(dob);
-        card.appendChild(place);
-        card.appendChild(death);
-        card.appendChild(portrait);
+        logo.setAttribute('src', member.image);
+        logo.setAttribute('alt', `Logo for ${member.name}`)
+        logo.setAttribute('loading', 'lazy');
+        logo.setAttribute('width', 'auto')
+        logo.setAttribute('max-height', '150px');
+        // Append logo to the top section
+        top.appendChild(logo);
+
+        address.textContent = member.address;
+        phone.textContent = member.phone;
+        url.textContent = member.website;
+        url.setAttribute('href', member.website);
+
+        bottom.appendChild(address);
+        bottom.appendChild(phone);
+        bottom.appendChild(url);
 
         // Now, pin the whole grid.
-        cards.appendChild(card)
+        card.appendChild(top);
+        card.appendChild(bottom);
+
+        cards.appendChild(card);
     });
 
 }
 
-// Logic for the radio buttons
-function toggleSorting(sort_newest) {
-    localStorage.setItem('sort_newest', sort_newest);
-    newest = sort_newest;
+const displayBusinessTable = (members) => {
+    resetMemberGrid();
 
-    getProphetData(sort_newest, current_filter);
+    // Create table
+    const table = document.createElement('table');
+    table.classList.add('business-table');
+
+    // CNeed a header for the table
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+
+    // 4 columns - loop through to create from array
+    ['Business Name', 'Address', 'Phone', 'Website'].forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    const tbody = document.createElement('tbody');
+
+    members.forEach((member) => {
+        const row = document.createElement('tr');
+
+        // Create cells for each piece of data
+        const nameCell = document.createElement('td');
+        const addressCell = document.createElement('td');
+        const phoneCell = document.createElement('td');
+        const webCell = document.createElement('td');
+
+        nameCell.textContent = member.name;
+        addressCell.textContent = member.address;
+        phoneCell.textContent = member.phone;
+
+        // Create link for website
+        const websiteLink = document.createElement('a');
+        websiteLink.href = member.website;
+        websiteLink.textContent = member.website;
+        webCell.appendChild(websiteLink);
+
+        // Append cells to row
+        row.appendChild(nameCell);
+        row.appendChild(addressCell);
+        row.appendChild(phoneCell);
+        row.appendChild(webCell);
+
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    cards.appendChild(table);
 }
 
 // Store the grid
-const prophetsGrid = document.querySelector("#cards");
+const membersGrid = document.querySelector("#members-grid");
 
-// Reset the grid
-function resetProphetsGrid() { prophetsGrid.innerHTML = "" };
+if (membersGrid) {
+    // Reset the grid
+    function resetMemberGrid() { membersGrid.innerHTML = "" };
+
+    // Sorting Buttons
+    const grid_button = document.querySelector("#grid-button");
+    const table_button = document.querySelector("#table-button");
+
+    grid_button.addEventListener("click", () => {
+        toggleSorting('1');
+    });
+
+    table_button.addEventListener("click", () => {
+        toggleSorting('2')
+    });
+
+    // Logic for the grid/table buttons
+    function toggleSorting(type_ind) {
+        localStorage.setItem('sort_type', type_ind);    // 1 == grid, 2 == table
+        current_filter = type_ind;
+
+        getMemberData(current_filter);
+    }
+
+    getMemberData(current_filter);
+}

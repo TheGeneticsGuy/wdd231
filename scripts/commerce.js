@@ -182,6 +182,74 @@ function EstablishMenuWaypoint(id_name) {
     }
 }
 
+// WEATHER CARD
+
+const API_access = '08ba610f5ded3429b31956615a68dcb4';
+const lat = '32.22';
+const lon = '-110.97'
+const lonLatUrl = `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_access}`;
+
+async function weatherFetch() {
+    try {
+        const response = await fetch(lonLatUrl);
+        if (response.ok) {
+            const data = await response.json();
+            displayWeather(data);
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const convertTemperature = (kelvin, unit = 'C') => {
+    if (unit === 'C') {
+        return kelvin - 273.15; // Kelvin to Celsius
+    } else if (unit === 'F') {
+        return (kelvin - 273.15) * 9 / 5 + 32; // Kelvin to Fahrenheit
+    } else {
+        return kelvin; // Return Kelvin as default.
+    }
+};
+
+// For wind speed directions
+const directions = [
+    "N", "N/NE", "NE", "E/NE", "E", "E/SE", "SE", "S/SE",
+    "S", "S/SW", "SW", "W/SW", "W", "W/NW", "NW", "N/NW"
+];
+
+function getWindDirection(degree) {
+    const index = Math.round(degree / 22.5) % 16; // Wrap around if > 360°, since it all divides by 15, I need to be mod 16 to ensure it wraps correctly and is always within valid range.
+    return directions[index];
+}
+
+// WEATHER CONSTANTS
+const temp = document.querySelector('#temp');
+const feelsTemp = document.querySelector('#feels-temp');
+const weatherDesc = document.querySelector('#weather-description');
+const humidity = document.querySelector('#humidity');
+const windSpeed = document.querySelector('#wind-speed');
+const windDirection = document.querySelector('#wind-direction');
+const visibility = document.querySelector('#visibility');
+
+
+const displayWeather = (data) => {
+    temp.innerHTML = `${convertTemperature(data.main.temp, 'F').toFixed(0)} &deg;F`;
+    feelsTemp.innerHTML = `${convertTemperature(data.main.feels_like, 'F').toFixed(0)} &deg;F`;
+    weatherDesc.innerHTML = `${data.weather[0].description}`;
+    humidity.innerHTML = `${data.main.humidity}%`;
+    windSpeed.innerHTML = data.wind.speed;
+    windDirection.innerHTML = getWindDirection(data.wind.deg);
+    visibility.innerHTML = data.visibility;
+    const iconSource = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    graphic.setAttribute('src', iconSource);
+    graphic.setAttribute('alt', data.weather[0].description);
+}
+
+
+
 // Initial loading
+weatherFetch();
 render_courses(courses);
 EstablishMenuWaypoint("home");

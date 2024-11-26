@@ -17,19 +17,21 @@ body {
     background-color: var(--background-body-color);
     color: #333;
     margin: 0 auto;
+    max-width: 100%;
 
 }
 
 header {
+    width: 100%;
     background-color: var(--background-color);
+}
+
+#header-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-}
-
-head {
-    max-width: 1024px;
+    max-width: 1600px
 }
 
 .header-Top {
@@ -167,10 +169,6 @@ nav {
 
 /* MAIN BODY */
 
-body {
-    max-width: 1024px;
-}
-
 main {
     padding: 0.5rem;
 }
@@ -184,7 +182,14 @@ main {
     text-align: center;
 }
 
-.bottom_section p {
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+.left-section p {
     display: inline-block;
     text-align: left;
     color: #000;
@@ -283,7 +288,6 @@ footer {
     background-color: var(--background-color);
     padding-bottom: 0rem;
     margin-top: 1rem;
-    max-width: 1024px;
 }
 
 .owner-info {
@@ -303,4 +307,68 @@ footer p {
 
 .modified {
     color: #FDFF90;
+}
+
+/* WEATHER CARD */
+
+.weather-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-main {
+    margin: 20px;
+    background-color: #a7c8da;
+    border-radius: 15px;
+    width: 80%;
+    color: black;
+}
+
+.weather-main p {
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.temp-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.weather-main img {
+    width: 75px;
+    height: auto;
+}
+
+.weather-main h3 {
+    font-family: var(--heading-font);
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.left-weather {
+    text-align: right;
+}
+
+.right-weather {
+    text-align: left;
+}
+
+.weather-details p {
+    font-family: var(--paragraph-font);
+    margin: 5px 0;
+    font-size: 1.2rem;
 }

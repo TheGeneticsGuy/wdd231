@@ -346,7 +346,7 @@ footer p {
     height: auto;
 }
 
-.weather-main h3 {
+#main-temp {
     font-family: var(--heading-font);
     font-size: 2.5rem;
     margin: 20px 0;

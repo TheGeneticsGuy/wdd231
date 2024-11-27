@@ -1,3 +1,29 @@
+@media screen and (min-width: 550px) {
+
+    #header-left {
+        min-width: 700px;
+    }
+
+}
+
+/* For the hero images */
+@media (max-width: 599px) {
+    .hero-wide {
+        display: none;
+    }
+
+    .join-button {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width: 600px) {
+    .hero-mobile {
+        display: none;
+    }
+}
+
+
 @media screen and (min-width: 740px) {
 
     #footer-container {

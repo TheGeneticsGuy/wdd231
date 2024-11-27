@@ -27,17 +27,19 @@ body {
     display: grid;
     justify-content: center;
     background: linear-gradient(to left,
-            var(--main-color) 82%,
-            #C1C2BF 18%);
+            var(--main-color) 89%,
+            #C1C2BF 11%);
     /* Color Matched to the Logo using color picker hex match */
+    max-width: 100%;
+    width: 100%;
 }
 
 #header-top {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: stretch;
     min-height: 150px;
-    max-width: 1600px;
+    margin: 0 auto;
 }
 
 header h1 {
@@ -54,10 +56,14 @@ header h1 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-self: start;
+    padding-left: 20px;
+    min-width: 500px;
 }
 
 header img {
     margin: 0;
+    height: auto;
 }
 
 
@@ -345,6 +351,74 @@ footer img {
     height: auto;
     padding: 10px;
 }
+
+/* MAIN HOME PAGE */
+
+.hero-mobile picture,
+.hero-wide picture {
+    display: block;
+    width: 100%;
+}
+
+.hero-mobile img,
+.hero-wide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Using Percent on sizing and spacing as I want this to scale with image */
+.join-button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 1.5% 3%;
+    border-radius: 10px;
+    width: 50%;
+    text-decoration: none;
+    font-size: clamp(16px, 2vw, 36px);
+    /* Set lower and upper range for styling preference */
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+    text-align: center;
+    cursor: pointer;
+    -webkit-text-stroke: 0.25px #000;
+    /* max-height: 25px; */
+}
+
+.join-button a {
+    text-decoration: none;
+    text-shadow: 1px 3px 3px rgba(0, 0, 0, 0.7);
+}
+
+.join-button:hover {
+    background-color: rgba(190, 45, 45, 0.733);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.join-button a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+
+
 
 /* Til the other pages get build */
 #placeholder {

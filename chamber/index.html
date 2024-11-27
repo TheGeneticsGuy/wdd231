@@ -75,7 +75,24 @@
     </header>
 
     <main>
-        <h2 id="placeholder">HOME PAGE COMING SOON</h2>
+        <div class="hero-image-container">
+            <div class="hero-mobile">
+                <picture>
+                    <source srcset="images/hero-small.webp" media="(max-width: 899px)">
+                    <img src="images/hero-small.webp" alt="Chamber of Commerce" width="449" height="459">
+                </picture>
+            </div>
+
+            <div class="hero-wide">
+                <picture>
+                    <source srcset="images/hero-large.webp" media="(min-width: 900px)">
+                    <source srcset="images/hero-med.webp" media="(min-width: 600px) and (max-width: 899px)">
+                    <img src="images/hero-med.webp" alt="Chamber of Commerce" width="896" height="512">
+                </picture>
+            </div>
+            <a href="join.html" class="join-button">Join Us!</a>
+        </div>
+
     </main>
 
     <footer>
@@ -83,7 +100,7 @@
             <div id="footer-left">
                 <p class="name-styling">Artificial Intelligence<br>Chamber of Commerce</p>
                 <p>1234 E. Tech Rd</p>
-                <p>AI Town, AZ 85747</p>
+                <p>Tucson, AZ 85747</p>
                 <p>info@aicc.org</p>
                 <p>(520) 123-4567</p>
             </div>

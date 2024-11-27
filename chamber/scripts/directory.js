@@ -66,6 +66,7 @@ const displayBusinessCards = (members) => {
         phone.textContent = member.phone;
         url.textContent = member.website;
         url.setAttribute('href', member.website);
+        url.setAttribute('target', "_blank");
 
         bottom.appendChild(address);
         bottom.appendChild(phone);

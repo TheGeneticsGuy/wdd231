@@ -185,7 +185,7 @@ function EstablishMenuWaypoint(id_name) {
 // WEATHER CARD
 
 const API_access = '08ba610f5ded3429b31956615a68dcb4';
-const lat = '32.22';
+const lat = '32.22';    // Tucson Coord
 const lon = '-110.97'
 const lonLatUrl = `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_access}`;
 

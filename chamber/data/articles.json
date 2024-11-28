@@ -1,0 +1,70 @@
+{
+    "articles": [
+        {
+            "title": "Elon Musk's xAI Reportedly Developing Consumer App",
+            "date": "November 27, 2024",
+            "source": "techcrunch.com",
+            "html_link": "https://techcrunch.com/2024/11/27/openai-moves-to-trademark-its-reasoning-models/"
+        },
+        {
+            "title": "OpenAI moves to trademark its o1 'reasoning' models",
+            "date": "November 27, 2024",
+            "source": "techcrunch.com",
+            "html_link": "https://techcrunch.com/2024/11/27/elon-musks-ai-company-may-release-a-consumer-app/"
+        },
+        {
+            "title": "Google Opens AI Campus in London for Sixth Form Student Education",
+            "date": "November 27, 2024",
+            "source": "blog.google",
+            "html_link": "https://blog.google/around-the-globe/google-europe/united-kingdom/google-launches-ai-campus-london/"
+        },
+        {
+            "title": "Artists Leak Access to OpenAI's Sora Video Generator in Protest",
+            "date": "November 26, 2024",
+            "source": "techcrunch.com",
+            "html_link": "https://techcrunch.com/2024/11/26/artists-appears-to-have-leaked-access-to-openais-sora/"
+        },
+        {
+            "title": "Google's connecting Spotify to its Gemini AI assistant",
+            "date": "November 26, 2024",
+            "source": "theverge.com",
+            "html_link": "https://www.theverge.com/2024/11/26/24306815/google-gemini-spotify-extension-rollout-android"
+        },
+        {
+            "title": "OpenAI and Meta to Train AI on African Languages",
+            "date": "November 26, 2024",
+            "source": "bloomberg.com",
+            "html_link": "https://www.bloomberg.com/news/articles/2024-11-26/openai-meta-and-orange-to-train-ai-models-on-african-languages"
+        },
+        {
+            "title": "Stable Diffusion 3.5 Large Gets New ControlNets: Blur, Canny, and Depth",
+            "date": "November 26, 2024",
+            "source": "stability.ai",
+            "html_link": "https://stability.ai/news/sd3-5-large-controlnets"
+        },
+        {
+            "title": "Custom Response Styles Now Available for Claude AI Users",
+            "date": "November 26, 2024",
+            "source": "anthropic.com",
+            "html_link": "https://www.anthropic.com/news/styles"
+        },
+        {
+            "title": "Google Labs Unveils GenChess: AI-Powered Chess Set Creator Using Imagen 3 Model",
+            "date": "November 26, 2024",
+            "source": "labs.google on X",
+            "html_link": "https://x.com/labsdotgoogle/status/1861447589604008087"
+        },
+        {
+            "title": "ChatGPT App Adds SearchGPT Option to Apple's Shortcuts",
+            "date": "November 25, 2024",
+            "source": "macrumors.com",
+            "html_link": "https://www.macrumors.com/2024/11/25/openai-searchgpt-shortcuts-app/"
+        },
+        {
+            "title": "Google is prepping Gemini to take action inside of apps",
+            "date": "November 22, 2024",
+            "source": "theverge.com",
+            "html_link": "https://www.theverge.com/2024/11/22/24303329/google-gemini-android-16-app-functions"
+        }
+    ]
+}

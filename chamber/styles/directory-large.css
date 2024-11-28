@@ -21,6 +21,7 @@
     .hero-mobile {
         display: none;
     }
+
 }
 
 
@@ -56,6 +57,17 @@
         justify-content: center;
         /* Add this to center the nav items */
         width: 100%;
+    }
+
+    .top_sections {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .forecast {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
 }

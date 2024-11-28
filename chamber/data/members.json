@@ -6,8 +6,9 @@
             "phone": "(123) 123-4567",
             "website": "https://chatgpt.com/",
             "image": "images/ChatGPT-logo.webp",
-            "member-lvl": 1,
-            "other": "Free limited use"
+            "member_lvl": 1,
+            "other": "Free limited use",
+            "offer": "20% OFF"
         },
         {
             "name": "Anthropic Claude AI",
@@ -15,8 +16,9 @@
             "phone": "(123) 123-4567",
             "website": "https://claude.ai/",
             "image": "images/claude-ai.webp",
-            "member-lvl": 1,
-            "other": "Free limited use"
+            "member_lvl": 1,
+            "other": "Free limited use",
+            "offer": ""
         },
         {
             "name": "Grok by X",
@@ -24,8 +26,9 @@
             "phone": "(123) 123-4567",
             "website": "https://x.com/grok",
             "image": "images/grok-logo.webp",
-            "member-lvl": 1,
-            "other": "Free on X only"
+            "member_lvl": 2,
+            "other": "Free on X only",
+            "offer": "FREE UNLIMITED"
         },
         {
             "name": "Google DeepMind",
@@ -33,8 +36,9 @@
             "phone": "(123) 123-4567",
             "website": "https://deepmind.com/",
             "image": "images/google-deepmind.webp",
-            "member-lvl": 1,
-            "other": "Beta testing"
+            "member_lvl": 2,
+            "other": "Beta testing",
+            "offer": "15% OFF"
         },
         {
             "name": "LLaMA - Meta AI",
@@ -42,8 +46,9 @@
             "phone": "(123) 123-4567",
             "website": "https://ai.meta.com/",
             "image": "images/meta-ai.webp",
-            "member-lvl": 1,
-            "other": "Free limited use"
+            "member_lvl": 3,
+            "other": "Free limited use",
+            "offer": ""
         },
         {
             "name": "GitHub Copilot",
@@ -51,8 +56,9 @@
             "phone": "(123) 123-4567",
             "website": "https://github.com/features/copilot",
             "image": "images/github-copilot.webp",
-            "member-lvl": 1,
-            "other": "Subscription Required"
+            "member_lvl": 1,
+            "other": "Subscription Required",
+            "offer": "FREE TRIAL"
         },
         {
             "name": "Stability AI",
@@ -60,8 +66,9 @@
             "phone": "(123) 123-4567",
             "website": "https://stability.ai/",
             "image": "images/stability-ai.webp",
-            "member-lvl": 1,
-            "other": "Professional Licensing Required"
+            "member_lvl": 4,
+            "other": "Professional Licensing Required",
+            "offer": ""
         },
         {
             "name": "MidJourney",
@@ -69,8 +76,9 @@
             "phone": "(123) 123-4567",
             "website": "https://www.midjourney.com/",
             "image": "images/midjourney.webp",
-            "member-lvl": 1,
-            "other": "Subscription Required"
+            "member_lvl": 1,
+            "other": "Subscription Required",
+            "offer": ""
         }
     ]
 }

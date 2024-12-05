@@ -1,6 +1,7 @@
 :root {
     --background-color: #2d5a72;
     --background-body-color: #f5f5f5;
+    --course-button-color: #6e3c3b;
 
     --heading-font: 'Playfair Display', serif;
     --paragraph-font: 'PT Serif', serif;
@@ -204,10 +205,31 @@ main {
     color: #031195
 }
 
-#course_work {
+.course-work {
     padding: 1rem;
     padding-left: 2rem;
     font-size: 1.25rem;
+}
+
+.course-work {
+    font-family: var(--paragraph-font);
+}
+
+.course-work li {
+    padding: 0.5rem;
+}
+
+.course-work a {
+    text-decoration: underline;
+}
+
+.course-work a:visited {
+    color: #000;
+}
+
+.course-work a:hover {
+    color: var(--course-button-color);
+    font-weight: 700;
 }
 
 #location {
@@ -277,9 +299,13 @@ h2 {
     border: none;
     padding: 0.5rem;
     font-size: 1rem;
-    /* cursor: pointer; */
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
     margin: 5px;
+}
+
+#course-grid button:hover {
+    opacity: 0.5;
 }
 
 /* FOOTER */
@@ -371,4 +397,175 @@ footer p {
     font-family: var(--paragraph-font);
     margin: 5px 0;
     font-size: 1.2rem;
+}
+
+/* MODALS */
+
+dialog {
+    max-width: 450px;
+    border: 1px solid rgb(0 0 0 / 0.8);
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 15px;
+    font-family: var(--paragraph-font);
+    padding-bottom: 1rem;
+    margin: 1rem;
+}
+
+
+#course-details h2 {
+    background-color: var(--background-color);
+    margin: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#course-details h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#course-details>h3,
+#course-details>p {
+    padding: 1rem;
+}
+
+#course-details p {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+#course-details p strong {
+    font-weight: bold;
+    /* Explicitly set bold weight for strong elements */
+}
+
+::backdrop {
+    background-color: rgb(0 0 0 / 0.5);
+}
+
+dialog button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(0 0 0 / 0.1);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background-color: transparent;
+}
+
+/* ANIMATION */
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+ul li {
+    opacity: 0;
+    /* Ensure items are hidden initially */
+    animation: slide-in 0.5s ease-out forwards;
+}
+
+/* Add delay for sequential animation */
+/* NAV ANIMATION */
+ul li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+ul li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+ul li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+ul li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* COURSE WORK ANIMATION */
+.course-work li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.course-work li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.course-work li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.course-work li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.course-work li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.course-work li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.course-work li:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.course-work li:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+/* ROTATING IMAGE */
+
+#course-section {
+    position: relative;
+}
+
+#rotating-img {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
+    animation: rotate360 10s linear infinite;
+    /* Rotates once every 10 seconds */
+}
+
+@keyframes rotate360 {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+        /* Start at 0 degrees */
+    }
+
+    to {
+        transform: translateY(-50%) rotate(360deg);
+        /* End at 360 degrees */
+    }
 }

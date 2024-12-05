@@ -41,7 +41,7 @@ function render_courses(filtered_classes) {
         // Adding click event listener for later
         course_button.addEventListener("click", () => {
 
-            console.log(`Selected course: ${course.title}`);
+            displayCourseDetailsModal(course);
 
         });
 
@@ -76,6 +76,32 @@ wdd_courses.addEventListener("click", () => {
     let wdd = courses.filter(course => course.subject == 'WDD');
     render_courses(wdd);
 });
+
+// MODAL LOGIC
+
+const courseDetails = document.querySelector('#course-details');
+
+function displayCourseDetailsModal(course) {
+    // Reset when displaying
+    courseDetails.innerHTML = '';
+    courseDetails.innerHTML = `
+        <button id="closeModal">❌</button>
+        <h2>${course.subject} ${course.number}</h2>
+        <h3>${course.title}</h3>
+        <p><strong>Credits</strong>: ${course.credits}</p>
+        <p><strong>Certificate</strong>: ${course.certificate}</p>
+        <p>${course.description}</p>
+        <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+
+    courseDetails.showModal();
+
+    const closeButton = document.querySelector('#closeModal');
+
+    closeButton.addEventListener("click", () => {
+        courseDetails.close();
+    });
+}
 
 const courses = [
     {
@@ -182,6 +208,7 @@ function EstablishMenuWaypoint(id_name) {
     }
 }
 
+
 // WEATHER CARD
 
 const API_access = '08ba610f5ded3429b31956615a68dcb4';
@@ -246,7 +273,6 @@ const displayWeather = (data) => {
     graphic.setAttribute('src', iconSource);
     graphic.setAttribute('alt', data.weather[0].description);
 }
-
 
 
 // Initial loading

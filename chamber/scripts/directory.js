@@ -169,8 +169,6 @@ if (membersGrid) {
 
 }
 
-
-
 // WEATHER CONSTANTS
 const temp = document.querySelector('#temp');
 

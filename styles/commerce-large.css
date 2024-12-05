@@ -9,6 +9,10 @@
         justify-content: center;
     }
 
+    #rotating-img {
+        display: flex;
+    }
+
 }
 
 @media screen and (min-width: 800px) {

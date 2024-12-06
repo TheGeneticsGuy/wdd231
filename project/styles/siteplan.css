@@ -1,0 +1,234 @@
+:root {
+    --button-color: #473D3A;
+    --secondary-color: #B25E39;
+
+    /* Text Color */
+    --primarytext-color: black;
+    --secondarytext-color: #F3F3F3;
+    --headerfooter-color: #E5A13E;
+
+    --heading-font: "Playfair Display", serif;
+    --paragraph-font: 'PT Serif', serif;
+}
+
+* {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    font-family: var(--heading-font);
+}
+
+.header-content {
+    position: relative;
+    text-align: center;
+}
+
+.header-content h1 {
+    display: inline-block;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    transition: 0.25s ease-in-out;
+}
+
+.header-content h1::before,
+.header-content h1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100vw;
+    height: 1px;
+    background-color: #000;
+}
+
+.header-content h1::before {
+    left: 100%;
+}
+
+.header-content h1::after {
+    right: 100%;
+}
+
+header h2 {
+    padding-top: 2rem;
+}
+
+header p {
+    font-family: var(--paragraph-font);
+    padding-top: 1rem;
+    max-width: 1000px;
+}
+
+h1:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+    color: #FFF;
+    text-shadow: 0 0 5px #03e9f4,
+        0 0 25px #03e9f4,
+        0 0 50px #03e9f4,
+        0 0 100px #03e9f4;
+}
+
+h1:visited {
+    color: black;
+}
+
+.header-content h1 a {
+    text-decoration: none;
+}
+
+h1 a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+header p {
+    color: var(--primarytext-color);
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+#header-purpose {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+#header-purpose p {
+    padding: 0.5rem;
+    text-align: left;
+    font-family: var(--paragraph-font);
+}
+
+#header-purpose img {
+    align-self: center;
+    margin-top: 0.5rem;
+}
+
+#header-purpose h2 {
+    text-align: center;
+    font-weight: 500;
+}
+
+main {
+    min-height: 500px;
+}
+
+
+.scenarios {
+    text-align: center;
+}
+
+.colorChoices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+}
+
+.colors {
+    display: flex;
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.colorText {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+
+.circle1 {
+    background-color: var(--button-color);
+}
+
+.circle2 {
+    background-color: var(--secondary-color);
+}
+
+.circle3 {
+    background-color: var(--secondarytext-color);
+}
+
+.circle3 .colorText {
+    color: black;
+}
+
+.typography {
+    text-align: center;
+}
+
+.typography p {
+    font-size: 24px;
+    padding: 3px;
+}
+
+.typography a {
+    text-decoration: none;
+}
+
+.typography a:hover {
+    text-decoration: underline;
+}
+
+.font1 {
+    font-family: var(--heading-font);
+}
+
+.font2 {
+    font-family: var(--paragraph-font);
+}
+
+.wireframe {
+    display: block;
+    text-align: center;
+    margin: 2rem;
+
+}
+
+.wireframe2 {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.wireframe2 p {
+    font-size: 24px;
+    padding-top: 0.5rem;
+}
+
+/* footer */
+
+footer {
+    background: var(--headerfooter-color);
+    padding-bottom: 0rem;
+}
+
+footer p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 0.25rem;
+}

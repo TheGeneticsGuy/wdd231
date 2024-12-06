@@ -208,7 +208,7 @@ main {
 .course-work {
     padding: 1rem;
     padding-left: 2rem;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .course-work {
@@ -216,7 +216,7 @@ main {
 }
 
 .course-work li {
-    padding: 0.5rem;
+    padding: 0.25rem;
 }
 
 .course-work a {
@@ -539,6 +539,10 @@ ul li:nth-child(4) {
 
 .course-work li:nth-child(8) {
     animation-delay: 0.8s;
+}
+
+.course-work li:nth-child(9) {
+    animation-delay: 0.9s;
 }
 
 /* ROTATING IMAGE */

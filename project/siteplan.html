@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Topping - WDD 231 - Siteplan Final Project - Warcraft Realms</title>
+
+    <!-- Google Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Font links -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+    <meta name="description" content="Aaron Topping - WDD 231 - Siteplan Final Project - Warcraft Realms">
+    <meta name="author" content="Aaron Topping">
+
+    <!-- STYLE SHEETS -->
+    <link rel="stylesheet" href="styles/siteplan.css">
+
+    <!-- JS LOGIC -->
+    <script src="scripts/siteplan.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- META properties Facebook -->
+    <meta property="og:title" content="Aaron Topping">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thegeneticsguy.github.io/wdd231/project/siteplan.html">
+    <meta property="og:image" content="https://thegeneticsguy.github.io/wdd231/images/Aaron.webp">
+    <meta property="og:description" content="WDD 231 Home Page">
+
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Aaron Topping">
+    <meta name="twitter:description" content="WDD 231 Home Page">
+    <meta name="twitter:image" content="https://thegeneticsguy.github.io/wdd231/images/Aaron.webp">
+    <meta name="twitter:url" content="https://thegeneticsguy.github.io/wdd231/project/siteplan.html">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1><a href="#" id="home" title="Home">World of Warcraft Realms</a>
+            </h1>
+        </div>
+
+        <h2>SITE PURPOSE</h2>
+        <p>The site provides a list of all of the Warcraft Realms, for Retail, Cataclysm Classic, and Classic Era
+            realms, and includes filters to choose by realm, by region, and by localization, as well as some sorting
+            features, such as sorting alphabetically and so on. The purpose is mainly an exercise in accessing a 3rd
+            party API in demonstrating that I can build something with that API. Also, a way to extract the data.</p>
+        <div id='header-purpose'>
+            <p><strong>Practical Usage #1:</strong>Useful site to extract all realm names for personal projects.</p>
+            <p><strong>Practical Usage #2:</strong>Support site for generating auto-complete list for realm names for my
+                <a href="https://github.com/TheGeneticsGuy/Guild-Roster-Manager" target="_blank">GRM Program.</a> Due to
+                x-realms guilds, it is often challenging typing in complicated and lengthy realm names.
+                Auto-complete is very helpful here, but first you need a table of realm names to extract from. Being
+                able to query a current server list to provide to the GRM addon when updating would be immensely
+                helpful.
+            </p>
+            <h2>Here's my GRM use-case! Would be nice to not have to manually maintain realm names.</h2>
+            <img src="images/autocomplete.gif" alt="GRM addon autocomplete" loading="lazy" width="640" height="360">
+        </div>
+
+    </header>
+
+    <main>
+        <div class="scenarios">
+            <h2>SCENARIOS</h2>
+            <p>Where can I copy a list of all the realm names without all of the extra data?</p>
+            <p>Where can I obtain realm lists for my region, my WOW build, and get them localized</p>
+            <p>Hrmm, I wonder how many servers Blizzard has up worldwide! Possible total server count.</p>
+        </div>
+
+        <div class="colorChoices">
+            <h2>COLOR SCHEMA</h2>
+            <div class="colors">
+                <div class="circle circle1">
+                    <span class="colorText">#473D3A</span>
+                </div>
+                <div class="circle circle2">
+                    <span class="colorText">#B25E39</span>
+                </div>
+                <div class="circle circle3">
+                    <span class="colorText">#F3F3F3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="typography">
+            <h2>TYPOGRAPHY</h2>
+            <p class="font1"><a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank">Google Font:
+                    Playfair</a></p>
+            <p class="font2"><a href="https://fonts.google.com/specimen/PT+Serif" target="_blank">Google Font: PT
+                    Serif</a></p>
+        </div>
+
+        <div class="wireframe">
+            <h2>WireFrame</h2>
+            <div class="wireframe2">
+                <p><a href="images/wf-full.webp" target="_blank">Desktop</a></p>
+                <p><a href="images/wf-mobile.webp" target="_blank">Mobile</a></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>©️<span id="currentyear"></span> | Aaron Topping | All rights reserved</p>
+    </footer>
+</body>
+
+</html>

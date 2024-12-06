@@ -120,10 +120,14 @@ header p {
     font-weight: 500;
 }
 
+#header-purpose img {
+    width: 95%;
+    height: auto;
+}
+
 main {
     min-height: 500px;
 }
-
 
 .scenarios {
     text-align: center;

@@ -27,6 +27,7 @@
 
     <!-- JS LOGIC -->
     <script src="scripts/directory.js" defer></script>
+    <script src="scripts/join.js" defer></script>
 
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico">
@@ -90,13 +91,16 @@
                                 name="last-name-input" autocomplete="family-name" placeholder=">" required></label>
 
                         <label class="form-title">Organizational Title<input type="text" id="title-input"
-                                name="title-input" placeholder=">"></label>
+                                name="title-input" pattern="^[A-Za-z \-]{7,}$"
+                                title="The title should contain only letters, hyphens, and spaces, with a minimum of seven characters."
+                                placeholder=">" minlength="7"></label>
 
                         <label class="form-title">Email*<input type="email" name="email" placeholder="john89@gmail.com"
                                 title="Your Email" autocomplete="email" required></label>
 
                         <label class="form-title">Cell Phone*
-                            <input type="tel" name="phone" autocomplete="tel" title="A Phone Number with dashes"
+                            <input type="tel" name="phone" autocomplete="tel"
+                                title="A Phone Number with at least 10 numbers, with or without hyphens."
                                 placeholder="999-555-1234" pattern="^(\+?\d{1,3}-?)?\d{3}-?\d{3}-?\d{4}$" minlength="10"
                                 maxlength="15" required> <!-- Country Code Optional Pattern with the '?' -->
                         </label>
@@ -121,7 +125,7 @@
                         </label>
 
                         <!-- Hidden Timestamp -->
-                        <input type="hidden" id="timestamp" name="timestamp" value="">
+                        <input type="hidden" id="hidden-timestamp" name="hidden-timestamp" value="">
 
                         <p class="req"><i>(*) Required</i></p>
 
@@ -131,6 +135,13 @@
 
                 </form>
 
+                <!-- Running for Hidden Timestamp - but after form loads -->
+                <script>
+                    const currentDateTime = new Date();
+                    document.querySelector("#hidden-timestamp").value = currentDateTime.toISOString();
+                </script>
+
+
             </section>
 
             <section class="membership-levels">
@@ -138,6 +149,9 @@
                 <div id="member-levels-grid"></div>
 
             </section>
+
+            <dialog id="member-details"></dialog>
+
         </div>
     </main>
 

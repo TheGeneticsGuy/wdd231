@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 231 Chamber of Commerce - Aaron Topping - Join Page</title>
+    <title>WDD 231 Chamber of Commerce - Aaron Topping - Sign Up Thank You Page</title>
 
     <!-- Google Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
 
-    <meta name="description" content="WDD 231 - Chamber of Commerce - Join Page">
+    <meta name="description" content="WDD 231 - Chamber of Commerce - Discover Page">
     <meta name="author" content="Aaron Topping">
 
     <!-- STYLE SHEETS -->
@@ -27,6 +27,7 @@
 
     <!-- JS LOGIC -->
     <script src="scripts/directory.js" defer></script>
+    <script src="scripts/application.js" defer></script>
 
     <!-- Favicon -->
     <link rel="icon" href="../images/favicon.ico">
@@ -36,12 +37,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://thegeneticsguy.github.io/wdd231/">
     <meta property="og:image" content="https://thegeneticsguy.github.io/wdd231/images/Aaron.webp">
-    <meta property="og:description" content="WDD 231 Chamber of Commerce - Join Page">
+    <meta property="og:description" content="WDD 231 Chamber of Commerce - Sign Up Thank You Page">
 
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Aaron Topping">
-    <meta name="twitter:description" content="WDD 231 Chamber of Commerce - Join Page">
+    <meta name="twitter:description" content="WDD 231 Chamber of Commerce - Sign Up Thank You Page">
     <meta name="twitter:image" content="https://thegeneticsguy.github.io/wdd231/images/Aaron.webp">
     <meta name="twitter:url" content="https://thegeneticsguy.github.io/wdd231/chamber/chamber.html">
 
@@ -67,7 +68,7 @@
                 <ul class="navigation">
                     <li><a href="index.html" id="home_nav">Home</a></li>
                     <li><a href="directory.html" id="directory_nav">Directory</a></li>
-                    <li><a href="join.html" id="join_nav"><span>►</span> Join <span>◄</span></a></li>
+                    <li><a href="join.html" id="join_nav">Join</a></li>
                     <li><a href="discover.html" id="discover_nav">Discover</a></li>
                 </ul>
             </div>
@@ -75,69 +76,12 @@
     </header>
 
     <main>
-        <div id="join-page-container">
-            <section class="join-page">
-                <h2>Membership Application Form</h2>
+        <div id="thank-you-page">
+            <h1>Signup Details</h1>
 
-                <form method="GET" action="thankyou.html" id="coreForm">
-
-                    <fieldset>
-
-                        <label class="form-title">First Name*<input type="text" id="first-name-input"
-                                name="first-name-input" autocomplete="given-name" placeholder=">" required></label>
-
-                        <label class="form-title">Last Name*<input type="text" id="last-name-input"
-                                name="last-name-input" autocomplete="family-name" placeholder=">" required></label>
-
-                        <label class="form-title">Organizational Title<input type="text" id="title-input"
-                                name="title-input" placeholder=">"></label>
-
-                        <label class="form-title">Email*<input type="email" name="email" placeholder="john89@gmail.com"
-                                title="Your Email" autocomplete="email" required></label>
-
-                        <label class="form-title">Cell Phone*
-                            <input type="tel" name="phone" autocomplete="tel" title="A Phone Number with dashes"
-                                placeholder="999-555-1234" pattern="^(\+?\d{1,3}-?)?\d{3}-?\d{3}-?\d{4}$" minlength="10"
-                                maxlength="15" required> <!-- Country Code Optional Pattern with the '?' -->
-                        </label>
-
-                        <label class="form-title">Business/Organization Name*<input type="text" id="business-input"
-                                name="business-input" placeholder=">" required></label>
-
-                        <label class="form-title">Membership Level*
-                            <select name="memberSelection" id="memberSelection" required>
-                                <option value="" disabled selected>Select a Membership...</option>
-                                <option value="Gold">Gold Membership</option>
-                                <option value="Silver">Silver Membership</option>
-                                <option value="Bronze">Bronze Membership</option>
-                                <option value="Non-Profit">Non Profit Membership (Free)</option>
-                            </select>
-                        </label>
-
-                        <label class="form-title">Business/Organization Description<textarea id="description"
-                                name="description" rows="4" cols="50"
-                                title="Provide a description of your company/organization">
-                            </textarea>
-                        </label>
-
-                        <!-- Hidden Timestamp -->
-                        <input type="hidden" id="timestamp" name="timestamp" value="">
-
-                        <p class="req"><i>(*) Required</i></p>
-
-                    </fieldset>
-
-                    <input type="submit" value="Apply for Membership">
-
-                </form>
-
-            </section>
-
-            <section class="membership-levels">
-                <h2>Membership Levels</h2>
-                <div id="member-levels-grid"></div>
-
-            </section>
+            <div id=results-wrapper>
+                <div id="join-results"></div>
+            </div>
         </div>
     </main>
 

@@ -3,7 +3,6 @@
     #header-left {
         min-width: 700px;
     }
-
 }
 
 /* For the hero images */
@@ -60,6 +59,10 @@
     }
 
     .top_sections {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #join-page-container {
         grid-template-columns: 1fr 1fr;
     }
 

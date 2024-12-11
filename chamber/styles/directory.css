@@ -427,7 +427,8 @@ footer img {
     padding: 1rem;
 }
 
-.top_sections h2 {
+.top_sections h2,
+.join-page h2 {
     background-color: var(--main-color);
     color: #000;
     padding: 0.5rem;
@@ -436,7 +437,8 @@ footer img {
     border-radius: 10px;
 }
 
-.top_sections section {
+.top_sections section,
+.join-page {
     background-color: rgb(245, 245, 245);
     /* padding: 1rem; */
     padding-top: 0;
@@ -678,4 +680,131 @@ footer img {
 #placeholder {
     text-align: center;
     padding: 2rem;
+}
+
+/* ---------------- APPLICATION FORM ------------------- */
+
+#join-page-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1400px;
+    gap: 20px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#coreForm {
+    font-size: 16px;
+    font-family: var(--paragraph-font);
+    max-width: 450px;
+    margin: auto;
+    background-color: var(--form-color);
+    padding: 1rem;
+}
+
+#coreForm fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+#coreForm label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.form-title {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--teal);
+    font-family: var(--font-page), sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+#join-page-container h2 {
+    text-align: center;
+}
+
+#coreForm input[type="text"],
+#coreForm input[type="email"],
+#coreForm input[type="tel"],
+#coreForm select,
+#coreForm textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #999;
+    border-radius: 6px;
+    background-color: var(--choice-color);
+    color: #2b2b2b;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+
+#coreForm select {
+    appearance: none;
+    /* REUSABLE DROP DOWN ARROW THAT IS DYNAMIC */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M1 4l5 5 5-5' fill='none' stroke='%23999' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    line-height: 1.5;
+}
+
+#coreForm input[type="submit"] {
+    border: none;
+    background-image: linear-gradient(#9c2c13, #6f200e);
+    color: #fff;
+    border-radius: 6px;
+    padding: 0.8rem;
+    width: 100%;
+    margin-top: 1rem;
+    box-shadow: 1px 1px 4px #999;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-image 0.3s ease;
+}
+
+#coreForm input[type="submit"]:hover {
+    background-image: linear-gradient(#b33a20, #8a2812);
+}
+
+#coreForm input:required,
+#coreForm select:required {
+    border-left: solid 8px red;
+}
+
+#coreForm input:required:valid,
+#coreForm select:required:valid {
+    border-left: solid 8px green;
+}
+
+.req {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+/* THANK YOU PAGE */
+
+#thank-you-page h1 {
+    text-align: center;
+}
+
+#results-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#join-results {
+    align-items: left;
+    font-family: var(--paragraph-font);
 }

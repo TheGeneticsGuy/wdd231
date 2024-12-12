@@ -20,7 +20,6 @@
     .hero-mobile {
         display: none;
     }
-
 }
 
 
@@ -66,6 +65,9 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .discover-section-wrapper {
+        grid-template-columns: 1fr 2fr;
+    }
 }
 
 @media screen and (min-width: 1200px) {

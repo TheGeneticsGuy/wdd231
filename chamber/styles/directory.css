@@ -429,7 +429,8 @@ footer img {
 
 .top_sections h2,
 .join-page h2,
-.membership-levels h2 {
+.membership-levels h2,
+.discover-left-main h2 {
     background-color: var(--main-color);
     color: #000;
     padding: 0.5rem;
@@ -440,7 +441,9 @@ footer img {
 
 .top_sections section,
 .join-page,
-.membership-levels {
+.membership-levels,
+.discover-left-main section,
+#time-tracker {
     background-color: rgb(245, 245, 245);
     /* padding: 1rem; */
     padding-top: 0;
@@ -676,12 +679,6 @@ footer img {
     -webkit-text-stroke: 0.5px #000;
     text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.7);
     font-size: 2.5rem;
-}
-
-/* Til the other pages get build */
-#placeholder {
-    text-align: center;
-    padding: 2rem;
 }
 
 /* ---------------- APPLICATION FORM ------------------- */
@@ -990,4 +987,161 @@ dialog button {
 
 dialog button:hover {
     background-color: transparent;
+}
+
+/* ----------------- DISCOVERY PAGE ------------------------ */
+
+.discover-main {
+    max-width: 1600px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.discover-main h1 {
+    text-align: center;
+}
+
+#discover-main-header {
+    font-size: 1.5rem;
+}
+
+.discover-section-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.discover-left-main h2 {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.discover-left-main section,
+#time-tracker {
+    margin: 2rem;
+    min-width: 300px;
+}
+
+#time-tracker {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+
+#time-announce {
+    font-family: var(--paragraph-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 30px;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+#time-border {
+    border: 3px solid #000;
+    margin: 1rem;
+    min-width: 280px;
+    width: 90%;
+    border-radius: 10px;
+    justify-self: center;
+    box-shadow: -2px 5px 5px 2px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right,
+            var(--main-color),
+            #C1C2BF);
+}
+
+.discover-stuff {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    gap: 10px;
+}
+
+.discover-stuff p {
+    font-family: var(--paragraph-font);
+}
+
+.discover-right-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    justify-content: center;
+    margin: 0 auto;
+    grid-gap: 1rem;
+    padding: 0.5rem;
+}
+
+.discover-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -2px 5px 5px 2px rgba(0, 0, 0, 0.5);
+    background-color: rgb(245, 245, 245);
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-height: 500px;
+
+
+    /* Animation; */
+    animation: slideFadeIn 1.2s ease-in-out;
+}
+
+.discover-cards img {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    padding: 1rem;
+    /* Animation */
+    animation: rotateIn 1.5s ease-in-out;
+}
+
+.discover-cards h3 {
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+    margin: 1rem;
+    text-align: center;
+}
+
+.discover-cards h3:hover {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.discover-cards h3 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.discover-cards a {
+    transition: 0.3s ease-in-out;
+}
+
+.discover-cards a:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+@keyframes slideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-720deg) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+    }
 }

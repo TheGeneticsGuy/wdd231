@@ -1,6 +1,11 @@
 :root {
-    --button-color: #473D3A;
-    --secondary-color: #B25E39;
+
+
+    --button-color: #C1C2BF;
+    --secondary-color: #ffdda9;
+    --background-color: #444;
+    ;
+    --main-color: #ffdda9;
 
     /* Text Color */
     --primarytext-color: black;
@@ -170,12 +175,21 @@ main {
 }
 
 .circle3 {
-    background-color: var(--secondarytext-color);
+    background-color: var(--background-color);
 }
 
-.circle3 .colorText {
+.circle1 span {
     color: black;
 }
+
+.circle2 span {
+    color: black;
+}
+
+.circle3 span {
+    color: 000;
+}
+
 
 .typography {
     text-align: center;

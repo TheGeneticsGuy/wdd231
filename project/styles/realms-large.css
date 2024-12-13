@@ -1,0 +1,44 @@
+@media screen and (min-width: 550px) {
+
+    #header-left {
+        min-width: 700px;
+    }
+}
+
+@media screen and (min-width: 625px) {
+    .icon-menu {
+        display: none;
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 auto;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* Add this to center the nav items */
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 740px) {
+
+    #footer-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1600px;
+        width: 100%;
+    }
+
+    #footer-left,
+    #footer-right {
+        text-align: left;
+    }
+
+
+}

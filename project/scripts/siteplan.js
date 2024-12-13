@@ -1,1 +1,3 @@
-document.querySelector("#currentyear").innerHTML = new Date().getFullYear();
+// Footer
+document.getElementById("currentyear").innerHTML = new Date().getFullYear();
+document.getElementById("lastModified").innerHTML = document.lastModified;

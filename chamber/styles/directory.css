@@ -1115,11 +1115,8 @@ dialog button:hover {
 }
 
 .discover-cards h3:hover {
-    transform: scale(1) rotate(0);
-}
-
-.discover-cards a:hover {
-    transform: scale(1) rotate(0);
+    transform: none;
+    transition: none;
 }
 
 @keyframes slideFadeIn {

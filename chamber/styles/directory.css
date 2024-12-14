@@ -1105,10 +1105,6 @@ dialog button:hover {
     text-align: center;
 }
 
-.discover-cards h3:hover {
-    transform: scale(1.2) rotate(-5deg);
-}
-
 .discover-cards h3 a {
     text-decoration: none;
     color: inherit;
@@ -1118,8 +1114,12 @@ dialog button:hover {
     transition: 0.3s ease-in-out;
 }
 
+.discover-cards h3:hover {
+    transform: scale(1) rotate(0);
+}
+
 .discover-cards a:hover {
-    transform: scale(1.1) rotate(15deg);
+    transform: scale(1) rotate(0);
 }
 
 @keyframes slideFadeIn {

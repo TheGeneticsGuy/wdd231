@@ -51,5 +51,20 @@
         justify-content: center;
     }
 
+    #filter-button-container {
+        justify-content: flex-start !important;
+    }
+
+    #upper_main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+    }
+
+    #right-upper-main {
+        margin-left: 2rem;
+        margin-top: 0;
+    }
+
 
 }

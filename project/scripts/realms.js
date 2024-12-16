@@ -8,8 +8,6 @@ const locales = ["en_US", "ko_KR", "fr_FR", "de_DE", "zh_CN", "es_ES", "zh_TW", 
 const regions = ["us", "eu", "kr", "tw"];
 const namespaces = ["dynamic", "dynamic-classic", "dynamic-classic1x"]; // Normal , Progression Classic , Classic (SOD, HD, Era)
 
-let currentLocale = locales[0];
-let currentRegion = regions[0];
 let currentNamespace = namespaces[0];
 
 // HAMBURGER BUTTON LOGIC
@@ -141,4 +139,85 @@ async function displayRealms() {
     buildRealms(sortedRealms);
 }
 
-displayRealms();
+
+
+// LOAD SETTINGS AND CONFIGURE BUTTON STATES
+// Keep track of the currently selected button
+let selectedButton = null;
+const buttons = document.querySelectorAll('.filter-button');    // Sets all the class buttons to an array
+const regionDropdown = document.querySelector('#region-select');
+const localeDropdown = document.querySelector('#locale-select');
+
+buttons.forEach((button, index) => {
+    button.addEventListener("click", () => setChoseButton(index));
+});
+
+// So the animation remains permanent of the selected realm type filter button
+function setChoseButton(ind) {
+    const chosenButton = buttons[ind];
+
+    // If a button is already selected, remove the selected class
+    if (selectedButton) {
+        selectedButton.classList.remove('selected');
+    }
+
+    // Add the selected class to the newly clicked button
+    chosenButton.classList.add('selected');
+
+    // Update the selectedButton reference
+    selectedButton = chosenButton;
+
+    localStorage.setItem('selectedButtonId', chosenButton.id);
+}
+
+// This will hold all of the local storage configuration at the start
+function configureSaveSelection() {
+    let savedButtonId = localStorage.getItem('selectedButtonId');
+
+    if (!savedButtonId) {
+        savedButtonId = 'retail-button';
+    }
+
+    // Retail, Cata, or Classic Era Buttons
+    if (savedButtonId) {
+        const savedButton = document.querySelector(`#${savedButtonId}`);
+        if (savedButton) {
+            const savedIndex = Array.from(buttons).indexOf(savedButton);
+
+            setChoseButton(savedIndex);
+        }
+    }
+
+    // Restore previous selections from localStorage
+    currentRegion = localStorage.getItem('selectedRegion');
+    currentLocale = localStorage.getItem('selectedLocale');
+
+    if (currentRegion) {
+        regionDropdown.value = currentRegion;
+    } else {
+        currentRegion = regions[0];
+        regionDropdown.value = regions[0];
+    }
+
+    if (currentLocale) {
+        localeDropdown.value = currentLocale;
+    } else {
+        currentLocale = locales[0];
+        localeDropdown.value = locales[0];
+    }
+
+    // Add event listeners to store selections in localStorage
+    regionDropdown.addEventListener('change', () => {
+        const selectedRegion = regionDropdown.value;
+        localStorage.setItem('selectedRegion', selectedRegion);
+    });
+
+    localeDropdown.addEventListener('change', () => {
+        const selectedLocale = localeDropdown.value;
+        localStorage.setItem('selectedLocale', selectedLocale);
+
+    });
+}
+
+document.addEventListener("DOMContentLoaded", configureSaveSelection);
+document.addEventListener("DOMContentLoaded", displayRealms);

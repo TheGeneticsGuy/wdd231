@@ -24,7 +24,7 @@
     }
 }
 
-@media screen and (min-width: 740px) {
+@media screen and (min-width: 768px) {
 
     #footer-container {
         display: grid;
@@ -38,6 +38,17 @@
     #footer-left,
     #footer-right {
         text-align: left;
+    }
+
+    #upper_main {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #filter-button-container,
+    #right-upper-main {
+        align-items: center;
+        justify-content: center;
     }
 
 

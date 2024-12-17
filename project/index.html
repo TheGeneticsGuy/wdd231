@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -76,6 +76,7 @@
 
     <main>
         <div id="main_body">
+            <h2 id="realms-header">WARCRAFT REALMS</h2>
             <div id="upper_main">
                 <div>
                     <div id="filter-button-container">
@@ -111,8 +112,14 @@
                     </div>
                 </div>
             </div>
-            <div id="lower_main_grid">
-                <h2>PENDING</h2>
+            <div id="lower-main">
+                <p>Realms Showing: <span id="num-realms"></span></p>
+                <p id="modal-click-msg">Click Realm for Details</p>
+                <div id="lower_main_grid">
+
+                </div>
+
+                <dialog id="realm-details"></dialog>
             </div>
         </div>
     </main>

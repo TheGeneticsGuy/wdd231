@@ -224,7 +224,6 @@ ul li:nth-child(3) {
     margin: 0 auto;
     max-width: 1700px;
     width: 100%;
-    padding: 0 1rem;
 }
 
 #upper_main {
@@ -232,17 +231,16 @@ ul li:nth-child(3) {
     grid-template-columns: 1fr;
     margin: 1rem;
     padding: 1rem;
+
 }
 
 #filter-button-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
-    /* I can't seem to find parent override */
-    outline: 2px solid red;
 }
 
 #right-upper-main {
@@ -251,10 +249,8 @@ ul li:nth-child(3) {
     width: 100%;
     gap: 1.5rem;
     align-items: center;
-    /* padding: 1rem; */
     margin-left: 0;
     margin-top: 0.5rem;
-    outline: 2px solid red;
     justify-content: center;
 }
 
@@ -262,7 +258,7 @@ ul li:nth-child(3) {
     position: relative;
     /* Needed for positioning the pseudo-elements */
     width: auto;
-    min-width: 230px;
+    min-width: 260px;
     height: 3rem;
     font-family: var(--paragraph-font);
     font-weight: 700;
@@ -321,7 +317,7 @@ ul li:nth-child(3) {
 
 .dropdown {
     position: relative;
-    width: 230px;
+    width: 260px;
     height: 3rem;
     font-family: var(--paragraph-font);
     font-weight: 700;
@@ -352,9 +348,206 @@ ul li:nth-child(3) {
     color: #fff;
 }
 
+/* --------------- CORE GRID --------------------- */
+
+#lower-main {
+    display: grid;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
+    padding: 1rem;
+}
+
+/* Trying to give it a "frosty" frozen feel */
+#main_body h2 {
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 2rem;
+    margin: 0;
+    color: #1e81b0;
+    text-shadow:
+        0 0 25px rgba(30, 129, 176, 0.9),
+        3px 3px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+}
 
 
+#realms-header:hover {
+    transform: none;
+}
 
+#lower_main_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    overflow-x: auto;
+    /* white-space: nowrap; */
+    margin: 0 auto;
+}
+
+.realm-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 15px;
+    margin: 5px;
+    background-color: #e7e7e7;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    gap: 5px;
+    cursor: pointer;
+}
+
+.realm-item:hover {
+    background-color: #e8e8e8;
+}
+
+.realm-name {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.realm-status {
+    text-align: center;
+}
+
+.realm-status.status-up,
+.status-up {
+    color: #188145;
+    font-weight: bold;
+}
+
+.realm-status.status-down,
+.status-down {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.realm-population {
+    text-align: center;
+    font-weight: bold;
+}
+
+.realm-status,
+.realm-population {
+    display: none;
+}
+
+.grid-header {
+    font-size: 2.5em;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.grid-header .realm-status.status-up {
+    color: black;
+}
+
+#lower-main p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#lower-main span {
+    color: red;
+}
+
+#modal-click-msg {
+    display: grid;
+    font-size: 1.25rem !important;
+}
+
+/* MODAL LOGIC */
+
+/* MODALS */
+
+dialog {
+    max-width: 450px;
+    width: 90%;
+    border: 1px solid rgb(0 0 0 / 0.8);
+    box-shadow: 0 0 2em rgb(0 0 0 / 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 15px;
+    font-family: var(--paragraph-font);
+}
+
+dialog button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(0 0 0 / 0.1);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+dialog button:hover {
+    background-color: transparent;
+}
+
+#lower-main h2 {
+    font-size: 3rem;
+    padding: 0 3rem 0 3rem;
+    margin: 5px;
+}
+
+#lower-main h2:hover {
+    transform: none;
+}
+
+#modal-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    padding: 0.5rem;
+}
+
+#modal-wrapper p {
+    text-align: left;
+    padding: 5px;
+}
+
+#modal-left {
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: right;
+}
+
+#modal-divider {
+    display: flex;
+    width: 100%;
+    background-color: var(--secondary-color);
+    height: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.dialog h2 {
+    transition: none;
+    transform: none;
+}
+
+.dialog h2:hover {
+    transform: none;
+}
 
 /* -------- FOOTER ----------- */
 

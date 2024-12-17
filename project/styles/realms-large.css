@@ -55,6 +55,16 @@
         justify-content: flex-start !important;
     }
 
+    .realm-status,
+    .realm-population {
+        display: grid;
+    }
+
+    .realm-item {
+        grid-template-columns: repeat(3, 1fr);
+        cursor: auto;
+    }
+
     #upper_main {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -62,9 +72,19 @@
     }
 
     #right-upper-main {
-        margin-left: 2rem;
         margin-top: 0;
     }
 
+    #modal-click-msg {
+        display: none;
+    }
 
+    /* REMOVE TRANSITION IN MOBILE */
+    #realms-header {
+        transition: 0.3s ease-in-out;
+    }
+
+    #realms-header:hover {
+        transform: scale(1.1);
+    }
 }

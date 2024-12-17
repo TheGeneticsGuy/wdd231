@@ -818,13 +818,6 @@ dialog button:hover {
     text-decoration: underline;
 }
 
-
-
-
-
-
-
-
 .divider-footer {
     width: 100%;
     background-color: var(--nav-color);
@@ -848,6 +841,7 @@ footer {
     padding: 2rem;
     max-width: 1600px;
     width: 100%;
+    margin: 0 auto;
 }
 
 #footer-left,

@@ -364,7 +364,7 @@ ul li:nth-child(3) {
     font-size: 4rem;
     padding-top: 2rem;
     margin: 0;
-    color: #1e81b0;
+    color: #00547a;
     text-shadow:
         0 0 25px rgba(30, 129, 176, 0.9),
         3px 3px 2px rgba(0, 0, 0, 0.5);
@@ -389,6 +389,7 @@ ul li:nth-child(3) {
 }
 
 .realm-item {
+    animation: fadeIn 0.5s ease-in-out;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
@@ -399,6 +400,7 @@ ul li:nth-child(3) {
     font-size: 1.5rem;
     box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.5);
     gap: 5px;
+    min-width: 200px;
     cursor: pointer;
 }
 
@@ -456,12 +458,26 @@ ul li:nth-child(3) {
 }
 
 #lower-main span {
-    color: red;
+    color: #7a0000;
 }
 
 #modal-click-msg {
     display: grid;
     font-size: 1.25rem !important;
+}
+
+/* Fade-in animation */
+/* This animation is to make it obvious when realms refreshed */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* MODAL LOGIC */
@@ -594,14 +610,132 @@ dialog button:hover {
 
 .token-details h2 {
     font-size: 5rem;
+    text-align: center;
+}
+
+.token-details {
+    font-size: 2rem;
+    text-align: center;
 }
 
 
+/* ------- WOW TOKEN CARDS -------- */
+
+/* Wrapper for the entire grid */
+.token-grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    max-width: 1700px;
+}
+
+.toke-price-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0 0 10px;
+}
+
+#token-grid-retail,
+#token-grid-classic {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.token-price-section {
+    background: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    /* Start slightly below */
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.token-price-section:hover {
+    transform: scale(1.10);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#card-top,
+#card-bottom {
+    background: #e0e0e0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+#card-mid {
+    background: linear-gradient(45deg, #ffd700, #fff);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+#card-top img,
+#card-mid img {
+    margin-left: 8px;
+}
+
+#card-top p,
+#card-mid p,
+#card-bottom p {
+    margin: 0;
+    text-align: center;
+}
+
+#card-top p {
+    padding-left: 10px;
+}
 
 
+/* Apply staggered animation */
+.token-price-section:nth-child(1) {
+    animation-delay: 0.1s;
+}
 
+.token-price-section:nth-child(2) {
+    animation-delay: 0.2s;
+}
 
+.token-price-section:nth-child(3) {
+    animation-delay: 0.3s;
+}
 
+.token-price-section:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Animating card load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 
@@ -621,15 +755,10 @@ dialog button:hover {
 
 footer {
     background-color: var(--header-footer-color);
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     width: 100%;
-}
-
-.name-styling {
-    font-weight: bold;
-    font-size: large;
 }
 
 #footer-container {
@@ -663,16 +792,15 @@ footer {
 
 #footer-left #attribution {
     font-size: 1.1rem;
-    font-style: italic;
 }
 
 
 #footer-left a {
-    color: #fa2525;
+    color: #800000;
 }
 
 #footer-left a:visited {
-    color: #fa2525;
+    color: #800000;
 }
 
 #social_media {
@@ -683,7 +811,5 @@ footer {
 }
 
 footer img {
-    width: 75px;
-    height: auto;
     padding: 10px;
 }

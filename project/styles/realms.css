@@ -764,6 +764,7 @@ dialog button:hover {
     flex-wrap: wrap;
     gap: 30px;
     padding: 20px;
+    justify-content: center;
 }
 
 .addon-card {
@@ -771,6 +772,7 @@ dialog button:hover {
     border-radius: 8px;
     box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.1);
     width: calc(33.333% - 20px);
+    min-width: 380px;
     /* I want each to take up 1/3 */
     box-sizing: border-box;
     padding: 20px;
@@ -779,14 +781,17 @@ dialog button:hover {
 }
 
 .addon-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+    transform: none;
 }
 
 .addon-card img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+}
+
+.addon-card img:hover {
+    transform: rotate(720deg);
 }
 
 .addon-card h2 {

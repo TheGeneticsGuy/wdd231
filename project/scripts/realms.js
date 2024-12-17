@@ -31,7 +31,6 @@ async function getRealms(token) {
 
     // Manually constructing URL with query parameters as per Blizz documentation.
     const url = new URL(`https://${currentRegion}.api.blizzard.com/data/wow/search/connected-realm `);
-    // const url = new URL(`https://${currentRegion}.api.blizzard.com/data/wow/realm/index`);
     url.searchParams.append('namespace', `${currentNamespace}-${currentRegion}`);
     url.searchParams.append('locale', currentLocale);
 

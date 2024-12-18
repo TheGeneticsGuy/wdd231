@@ -52,17 +52,20 @@ async function getRealms(token) {
 
         // Now, let's build a table to sort the data
         // NOTE -- This falls back to English if there is no localized name as apparently not all realms have localized name options, notably the anniversary realms
-        const realmDetails = realmData.results.map(realm => ({
-            name: realm.data.realms[0].name[currentLocale] || realm.data.realms[0].name[locales[0]],
-            status: realm.data.status.type,                                 // need non-localized type for coloring Red or Green
-            statusLocalized: realm.data.status.name[currentLocale] || realm.data.status.name[locales[0]],
-            popLocalized: realm.data.population.name[currentLocale] || realm.data.population.name[locales[0]],        // Don't actually need non-localized for population since no special coloring
+        const realmDetails = realmData.results
+            .filter(realm => !realm.data.realms[0].name[currentLocale]?.startsWith("US PS") &&          // Want to filter out any dummy realms
+                !realm.data.realms[0].name[locales[0]]?.startsWith("US PS"))
+            .map(realm => ({
+                name: realm.data.realms[0].name[currentLocale] || realm.data.realms[0].name[locales[0]],
+                status: realm.data.status.type, // need non-localized type for coloring Red or Green
+                statusLocalized: realm.data.status.name[currentLocale] || realm.data.status.name[locales[0]],
+                popLocalized: realm.data.population.name[currentLocale] || realm.data.population.name[locales[0]], // Don't actually need non-localized for population since no special coloring
 
-            // EXTRA COLUMNS I COULD ADD - BUT WILL PROBABLY NOT FOR NOW - I will still store them
-            typeLocalized: realm.data.realms[0].type.name[currentLocale] || realm.data.realms[0].type.name[locales[0]],    // Also don't need non-localized for type
-            categoryLocalized: realm.data.realms[0].category[currentLocale] || realm.data.realms[0].category[locales[0]]    // Also don't need non-localized for type
+                // EXTRA COLUMNS I COULD ADD - BUT WILL PROBABLY NOT FOR NOW - I will still store them
+                typeLocalized: realm.data.realms[0].type.name[currentLocale] || realm.data.realms[0].type.name[locales[0]], // Also don't need non-localized for type
+                categoryLocalized: realm.data.realms[0].category[currentLocale] || realm.data.realms[0].category[locales[0]] // Also don't need non-localized for type
+            }));
 
-        }));
 
         // Sort realms alphabetically by name
         let sortedRealms = realmDetails.sort((a, b) =>
